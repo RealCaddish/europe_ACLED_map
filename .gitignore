@@ -102,3 +102,7 @@ dist
 
 # TernJS port file
 .tern-port
+
+
+# large data file for Ukraine, Belarus, and Russia 
+src\data\csv\2018-12-04-2021-12-09-Belarus-Lithuania-Poland-Russia-Ukraine.csv

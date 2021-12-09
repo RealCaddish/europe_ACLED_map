@@ -1,0 +1,31 @@
+{
+  "name": "europe_acled_map",
+  "version": "1.0.0",
+  "description": "packages for east Europe conflicts map ",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RealCaddish/europe_ACLED_map.git"
+  },
+  "author": "Nathaniel R Deaton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RealCaddish/europe_ACLED_map/issues"
+  },
+  "homepage": "https://github.com/RealCaddish/europe_ACLED_map#readme",
+  "dependencies": {
+    "chalk": "^5.0.0",
+    "leaflet": "^1.7.1",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "css-loader": "^6.5.1",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1"
+  }
+}
