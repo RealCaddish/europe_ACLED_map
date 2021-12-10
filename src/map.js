@@ -5,9 +5,9 @@ import graticules from './data/graticules.json';
 import urbans from './data/urban_areas.json';
 
 // load libraries
-import fetch from 'd3-fetch'
-import L from 'leaflet'
-import turf from '@turf/turf'
+import fetch from 'd3-fetch';
+import L from 'leaflet';
+import turf from '@turf/turf';
 
 
 function drawMap(data) {
