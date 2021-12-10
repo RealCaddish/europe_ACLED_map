@@ -4,8 +4,8 @@
   "description": "packages for east Europe conflicts map ",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack-dev-server --open"
+    "dev": "webpack-dev-server --open",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -18,7 +18,9 @@
   },
   "homepage": "https://github.com/RealCaddish/europe_ACLED_map#readme",
   "dependencies": {
+    "@turf/turf": "^6.5.0",
     "chalk": "^5.0.0",
+    "d3-fetch": "^3.0.1",
     "leaflet": "^1.7.1",
     "lodash": "^4.17.21"
   },

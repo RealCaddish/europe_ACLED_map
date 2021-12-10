@@ -1,6 +1,8 @@
 import _ from 'lodash';
 import './style.css';
-import data from './data/cleaned_conflicts.csv';
+import drawMap from './map';
+
+drawMap();
 
 function component() {
   const element = document.createElement('h1');
@@ -11,8 +13,6 @@ function component() {
   return element;
 
 }
-
-console.log(data)
 
 document.body.appendChild(component());
 

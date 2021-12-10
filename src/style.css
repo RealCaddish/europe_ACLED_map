@@ -1,7 +1,15 @@
+
+@import "https://unpkg.com/leaflet@1.7.1/dist/leaflet.css";
+
 body {
   background: olive;}
 
 h1 {
   font-family: sans-serif;
   color: rgb(74, 24, 116)
+}
+
+#map {
+  width: 98vw;
+  height: 95vh;
 }
