@@ -1,22 +1,28 @@
-// load data
+
 import conflicts from './data/conflicts_clipped.json';
 import countries from './data/countries_clipped.json';
 import graticules from './data/graticules.json';
 import urbans from './data/urban_areas.json';
 
-// load libraries
-import fetch from 'd3-fetch';
-import L from 'leaflet';
-import turf from '@turf/turf';
-
 import mapboxgl from 'mapbox-gl'
-mapboxgl.accessToken = 'pk.eyJ1IjoiZGVhdG5uciIsImEiOiJja3Z2MnQ5YWUwbTI5Mm5vNmwwajM0N2prIn0.fnQmRz1QKtEr17wabjsPOA';
 
 
+function makeMap() {
+
+  mapboxgl.accessToken = 'pk.eyJ1IjoiZGVhdG5uciIsImEiOiJja3Z2MnQ5YWUwbTI5Mm5vNmwwajM0N2prIn0.fnQmRz1QKtEr17wabjsPOA';
 
 
+  const map = new mapboxgl.Map({
+    container: 'map', // container ID
+    style: 'mapbox://styles/mapbox/streets-v11', // style URL
+    center: [-74.5, 40], // starting position [lng, lat]
+    zoom: 9 // starting zoom
+  });
 
+  console.log(map)
+};
 
+export default makeMap
 
 // Promise.all([countries, urbans, graticules, conflicts]).then(drawMap);
 
@@ -56,7 +62,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiZGVhdG5uciIsImEiOiJja3Z2MnQ5YWUwbTI5Mm5vNmwwa
 //     maxZoom: 20
 //   }).addTo(map);
 
-//   // create a layerGroup with geojson data 
+//   // create a layerGroup with geojson data
 //   const countryLayerGroup = L.geoJSON(country, {
 //     style: countryOptions
 //   }).addTo(map);
