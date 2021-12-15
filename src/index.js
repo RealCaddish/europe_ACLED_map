@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import './style.css';
-import './Eastern-Europe-Conflicts(ckx4yjck60dcg15mm3jhrb33u)/style.json'
+
 // import drawMap from './map';
 
 // drawMap();
