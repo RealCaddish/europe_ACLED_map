@@ -16,7 +16,7 @@ function makeMap() {
 
   mapboxgl.accessToken = 'pk.eyJ1IjoiZGVhdG5uciIsImEiOiJja3Z2MnQ5YWUwbTI5Mm5vNmwwajM0N2prIn0.fnQmRz1QKtEr17wabjsPOA';
 
-
+  // create map object from Mapbox
   const map = new mapboxgl.Map({
     container: 'map', // container ID
     style: style, // style URL
@@ -29,79 +29,79 @@ function makeMap() {
       customAttribution: 'Map designed by Nathanel Deaton'
     }));
 
-    map.addControl(new mapboxgl.FullscreenControl({container: document.querySelector('map')}))
+  map.addControl(new mapboxgl.FullscreenControl({ container: document.querySelector('map') }))
 
-    // add conflict points tileset 
-    map.on('load', function() {
-      map.addSource('conflicts', {
-        type: 'vector', 
-        url: 'mapbox://deatnnr.ckvye80p'
-      })
-      map.addLayer({
-        'id': 'conflictPoint', // id for later reference
-        'type': 'circle',
-        'source': 'conflicts',
-        'source-layer': 'conflicts-8n14vd', // refers to name of tileset hosted on Mapbox Studio 
-        'paint': {
-          'circle-opacity': 0
-          // 'circle-color' : [
-          //   'match',
-          //   ['get', 'conflicts'],
-          //   'Peaceful protest',
-          //   '#19944a',
-          //   'Armed clash',
-          //   '#b40808',
-          //   'Shelling/artillery/missile attack',
-          //   '#df800c',
-          //   'Attack',
-          //   '#de5454',
-          //   'Violent demonstration',
-          //   '#f0ed2d',
-          //   'Protest with intervention',
-          //   '#92903a',
-          //   'Excessive force against protesters',
-          //   '#daa85d',
-          //   'blue'
-          // ]
-        }
-      });
+  // add conflict points tileset 
+  map.on('load', function () {
+    map.addSource('conflicts', {
+      type: 'vector',
+      url: 'mapbox://deatnnr.ckvye80p'
+    })
+    map.addLayer({
+      'id': 'conflictPoint', // id for later reference
+      'type': 'circle',
+      'source': 'conflicts',
+      'source-layer': 'conflicts-8n14vd', // refers to name of tileset hosted on Mapbox Studio 
+      'paint': {
+        'circle-opacity': 0
+        // 'circle-color' : [
+        //   'match',
+        //   ['get', 'conflicts'],
+        //   'Peaceful protest',
+        //   '#19944a',
+        //   'Armed clash',
+        //   '#b40808',
+        //   'Shelling/artillery/missile attack',
+        //   '#df800c',
+        //   'Attack',
+        //   '#de5454',
+        //   'Violent demonstration',
+        //   '#f0ed2d',
+        //   'Protest with intervention',
+        //   '#92903a',
+        //   'Excessive force against protesters',
+        //   '#daa85d',
+        //   'blue'
+        // ]
+      }
     });
+  });
 
-    // create a popup
-    const popup = new mapboxgl.Popup({
-      closeButton: false,
-      closeOnClick: false,
-      offset: 10
-    });
+  // create a popup
+  const popup = new mapboxgl.Popup({
+    closeButton: false,
+    closeOnClick: false,
+    offset: 10
+  });
 
-    map.on('mouseenter', 'conflictPoint', (e) => {
+  map.on('mouseenter', 'conflictPoint', (e) => {
 
-      const features = map.queryRenderedFeatures(e.point);
+    const features = map.queryRenderedFeatures(e.point);
 
-      console.log(features)
-      
-      // change the cursor style as a UI affordance
-      map.getCanvas().style.cursor = 'pointer';
+    console.log(features)
 
-      // populate the popup and set its coordinates
-      // based on feature found
-      const coordinates = e.features[0].geometry.coordinates.slice();
-      const actor1 = e.features[0].properties.actor1;
-      const actor2 = e.features[0].properties.actor2;
-      const admin = e.features[0].properties.admin1;
-      const date = e.features[0].properties.event_date;
-      const fatalities = e.features[0].properties.fatalities;
-      const locale = e.features[0].properties.location;
-      const notes = e.features[0].properties.notes;
-      const source = e.features[0].properties.source;
-      const event_type = e.features[0].properties.sub_event_type;
-      const year = e.features[0].properties.year;
+    // change the cursor style as a UI affordance
+    map.getCanvas().style.cursor = 'pointer';
+
+    // populate the popup and set its coordinates
+    // based on feature found
+    const coordinates = e.features[0].geometry.coordinates.slice();
+    const actor1 = e.features[0].properties.actor1;
+    const actor2 = e.features[0].properties.actor2;
+    const admin = e.features[0].properties.admin1;
+    const date = e.features[0].properties.event_date;
+    const fatalities = e.features[0].properties.fatalities;
+    const locale = e.features[0].properties.location;
+    const notes = e.features[0].properties.notes;
+    const source = e.features[0].properties.source;
+    const event_type = e.features[0].properties.sub_event_type;
+    const year = e.features[0].properties.year;
 
 
 
-      console.log(actor1)
+    console.log(actor1)
 
-      popup
+    popup
       .setLngLat(coordinates)
       .setHTML(`<h3>Event Type: ${event_type}</h3>
                 <h4>Date:</h4> ${date}
@@ -115,19 +115,19 @@ function makeMap() {
 
                 `)
       .addTo(map);
-    });
+  });
 
-    map.on('mouseleave', 'conflictPoint', () =>  {
-      map.getCanvas().style.cursor = '';
-      popup.remove();
-    });
+  map.on('mouseleave', 'conflictPoint', () => {
+    map.getCanvas().style.cursor = '';
+    popup.remove();
+  });
 
-    // add scale control to map 
-    const scale = new mapboxgl.ScaleControl({
-      maxWidth: 80,
-      unit: 'metric'
-    });
-    map.addControl(scale);
+  // add scale control to map 
+  const scale = new mapboxgl.ScaleControl({
+    maxWidth: 80,
+    unit: 'metric'
+  });
+  map.addControl(scale);
 };
 
 export default makeMap
