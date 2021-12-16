@@ -1,3 +1,4 @@
+<<<<<<< HEAD
  # A Map of Ukraine-Russia Social and Political Unrest
 <a href='https://acleddata.com/about-acled/'> The Armed Conflict Location & Event Data Project</a> is a non-profit organization who regularly collects data on crisis events, actors, dates, and more information surrounding various destabilizing social and political events throughout the world. Much of this data is collected by local organizations whom then disseminate  it to ACLED, journalists, and other agencies. Tools used include MapboxGL, various npm packages, and Python for data analysis.
 
@@ -20,3 +21,7 @@ Next, I created a Python Notebook within my <i>csv</i> folder and imported the d
 After this was completed, I downloaded my style.json file to add it to my map build. I utilized a Webpack environment and imported various libraries with npm to begin the web map development process.  
 
 
+=======
+Mapping Conflicts in Eastern Europe: 
+A visualization of conflict data collected by the ACLED in Eastern Europe (particular focus on Ukraine, Belarus, and Russia) for 2021. 
+>>>>>>> 39e1b5ee5ba0b5d31f0bc4c8f8e3272086412e59
