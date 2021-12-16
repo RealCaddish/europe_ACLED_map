@@ -2,7 +2,7 @@
 @import "https://unpkg.com/leaflet@1.7.1/dist/leaflet.css";
 
 body {
-  background: olive;}
+  background: rgb(160, 160, 160);}
 
 h1 {
   font-family: sans-serif;

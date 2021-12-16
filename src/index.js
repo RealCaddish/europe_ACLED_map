@@ -4,6 +4,7 @@ import "./Eastern-Europe-Conflicts(ckx4yjck60dcg15mm3jhrb33u)/style.json"
 import makeMap from './map';
 import './mapboxStyle.css'
 
+
 // makeMap()
 
 function component() {
@@ -17,8 +18,6 @@ function component() {
   return element;
 
 }
-
-
 
 document.body.appendChild(component());
 
