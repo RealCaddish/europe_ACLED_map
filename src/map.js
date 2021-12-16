@@ -3,6 +3,7 @@ import conflicts from './data/conflicts_clipped.json';
 import countries from './data/countries_clipped.json';
 import graticules from './data/graticules.json';
 import urbans from './data/urban_areas.json';
+import style from './Eastern-Europe-Conflicts(ckx4yjck60dcg15mm3jhrb33u)/style.json'
 
 import mapboxgl from 'mapbox-gl'
 
@@ -14,12 +15,11 @@ function makeMap() {
 
   const map = new mapboxgl.Map({
     container: 'map', // container ID
-    style: 'mapbox://styles/mapbox/streets-v11', // style URL
-    center: [-74.5, 40], // starting position [lng, lat]
-    zoom: 9 // starting zoom
+    style: style, // style URL
+    center: [32.9, 51.1], // starting position [lng, lat]
+    zoom: 4.5 // starting zoom
   });
 
-  console.log(map)
 };
 
 export default makeMap

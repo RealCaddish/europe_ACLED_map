@@ -1,7 +1,6 @@
 import _ from 'lodash';
 import './style.css';
 import "./Eastern-Europe-Conflicts(ckx4yjck60dcg15mm3jhrb33u)/style.json"
-import './map'
 import makeMap from './map';
 
 // makeMap()
@@ -14,11 +13,13 @@ function component() {
   // element.innerHTML = _.join(['Hello there,', 'webpack'], ' ');
   // element.classList.add('hello');
 
-   makeMap()
-
   return element;
 
 }
 
+
+
 document.body.appendChild(component());
+
+makeMap()
 
