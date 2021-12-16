@@ -1,12 +1,33 @@
-
 @import "https://unpkg.com/leaflet@1.7.1/dist/leaflet.css";
+@import "https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css";
+
 
 body {
-  background: rgb(160, 160, 160);}
+  background: rgb(160, 160, 160);
+}
 
 h1 {
   font-family: sans-serif;
-  color: rgb(74, 24, 116)
+  color: rgb(74, 24, 116);
+  margin: 0
+}
+
+h3 {
+  font-family: sans-serif;
+  color: rgb(70, 15, 117);
+  text-align: left;
+  font-size: large;
+  text-align: center;
+  text-decoration: underline;
+}
+
+h4 {
+  font-family: sans-serif;
+  color: rgb(74, 24, 116);
+  text-align: left;
+  font-size: 18px;
+  line-height: 1.45;
+  margin: 0
 }
 
 #map {

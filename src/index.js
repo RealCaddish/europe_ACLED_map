@@ -8,6 +8,8 @@ import './mapboxStyle.css'
 // makeMap()
 
 function component() {
+
+
   const element = document.createElement('div');
 
   element.setAttribute('id', 'map')
