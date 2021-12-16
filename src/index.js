@@ -2,6 +2,7 @@ import _ from 'lodash';
 import './style.css';
 import "./Eastern-Europe-Conflicts(ckx4yjck60dcg15mm3jhrb33u)/style.json"
 import makeMap from './map';
+import './mapboxStyle.css'
 
 // makeMap()
 
