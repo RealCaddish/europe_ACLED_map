@@ -1,6 +1,6 @@
 
 URL: 
-https://europeconflictsmap.surge.sh/
+https://easteuropeconflictsmap.surge.sh/
 
 # A Map of Ukraine-Russia Social and Political Unrest
 <a href='https://acleddata.com/about-acled/'> The Armed Conflict Location & Event Data Project</a> is a non-profit organization who regularly collects data on crisis events, actors, dates, and more information surrounding various destabilizing social and political events throughout the world. Much of this data is collected by local organizations whom then disseminate  it to ACLED, journalists, and other agencies. Tools used include MapboxGL, various npm packages, and Python for data analysis.
